@@ -1,3 +1,8 @@
+/*
+Using dp over substrings, dp[i][j] is the answer for str[i...j] you can either
+insert on left/right or match beginning and end.
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 #define fore(x, a, b) for (lli x = a, __lim__ = b; x < __lim__; ++x)
