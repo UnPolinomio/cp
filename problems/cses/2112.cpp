@@ -1,3 +1,6 @@
+/*
+Compute convolution of binary vector and its reverse using fft.
+*/
 #include <bits/stdc++.h>
 using namespace std;
 #define fore(x, a, b) for (lli x = a, __lim__ = b; x < __lim__; ++x)
