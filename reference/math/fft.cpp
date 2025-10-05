@@ -5,6 +5,8 @@ using C = complex<double>;
 using vl = vector<long long int>;
 using vi = vector<int>;
 
+double PI = acos(-1.0);
+
 vector<C> dft_recursive(const vector<C>& a, bool inv = false) {
   int n = a.size();
   if (n == 1) return a;
@@ -21,7 +23,7 @@ vector<C> dft_recursive(const vector<C>& a, bool inv = false) {
   vector<C> y1 = dft_recursive(a1, inv);
 
   // combine solutions to odd and even positions
-  C wn = polar(1.0, 2.0 * M_PI / n * (inv ? -1.0 : 1.0));
+  C wn = polar(1.0, 2.0 * PI / n * (inv ? -1.0 : 1.0));
   C w = 1;
   vector<C> y(n);
   for (int i = 0; i < n / 2; ++i) {
@@ -44,7 +46,7 @@ void dft_iterative(vector<C>& a, bool inv = false) {
 
   vector<C> roots(n);  // [n/2^(k+1), n/2^k) = (n/2^k)-th unity roots (1st half)
   for (int i = 0; i < n / 2; ++i)
-    roots[n / 2 + i] = polar(1.0, 2.0 * M_PI * i / n * (inv ? -1.0 : 1.0));
+    roots[n / 2 + i] = polar(1.0, 2.0 * PI * i / n * (inv ? -1.0 : 1.0));
   for (int i = n / 2 - 1; i > 0; --i) roots[i] = roots[2 * i];
 
   vi rev(n);  // rev[i] = i (as L bit) reversed
