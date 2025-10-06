@@ -4,7 +4,10 @@ using namespace std;
 #define all(x) begin(x), end(x)
 
 using lli = long long int;
-using vi = vector<lli>;
+using vl = vector<lli>;
+using vi = vector<int>;
+using ii = pair<int, int>;
+using vii = vector<ii>;
 using vb = vector<bool>;
 
 int main() {
